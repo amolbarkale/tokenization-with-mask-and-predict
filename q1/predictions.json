@@ -1,0 +1,47 @@
+{
+  "original_sentence": "The cat sat on the mat because it was tired.",
+  "masked_sentence": "The cat sat [MASK] the mat because [MASK] was tired.",
+  "mask_indices": [
+    3,
+    7
+  ],
+  "model_used": "bert-base-uncased",
+  "results": [
+    {
+      "masked_position": 3,
+      "original_word": "on",
+      "candidates": [
+        {
+          "token": "on",
+          "score": 0.9904
+        },
+        {
+          "token": "at",
+          "score": 0.0014
+        },
+        {
+          "token": "upon",
+          "score": 0.0012
+        }
+      ]
+    },
+    {
+      "masked_position": 7,
+      "original_word": "it",
+      "candidates": [
+        {
+          "token": "it",
+          "score": 0.5496
+        },
+        {
+          "token": "he",
+          "score": 0.2618
+        },
+        {
+          "token": "she",
+          "score": 0.1756
+        }
+      ]
+    }
+  ]
+}
