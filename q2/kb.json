@@ -1,0 +1,115 @@
+{
+  "domain": "Factual Knowledge Base for Hallucination Detection",
+  "description": "Collection of factual Q-A pairs to test model accuracy and detect hallucinations",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the capital of Japan?",
+      "answer": "Tokyo",
+      "category": "geography",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q2",
+      "question": "What is the chemical formula for water?",
+      "answer": "H2O",
+      "category": "chemistry",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q3",
+      "question": "Who was the first President of the United States?",
+      "answer": "George Washington",
+      "category": "history",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q4",
+      "question": "What is the largest mammal in the world?",
+      "answer": "Blue whale",
+      "category": "biology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q5",
+      "question": "What is the square root of 144?",
+      "answer": "12",
+      "category": "mathematics",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q6",
+      "question": "What is the currency of Germany?",
+      "answer": "Euro",
+      "category": "economics",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q7",
+      "question": "What is the boiling point of water at sea level?",
+      "answer": "100 degrees Celsius",
+      "category": "physics",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q8",
+      "question": "Who wrote 'Pride and Prejudice'?",
+      "answer": "Jane Austen",
+      "category": "literature",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q9",
+      "question": "What is the atomic number of oxygen?",
+      "answer": "8",
+      "category": "chemistry",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q10",
+      "question": "What year did the Titanic sink?",
+      "answer": "1912",
+      "category": "history",
+      "difficulty": "medium"
+    }
+  ],
+  "edge_cases": [
+    {
+      "id": "ec1",
+      "question": "What is the current population of Mars?",
+      "category": "out_of_domain",
+      "reason": "No human population on Mars"
+    },
+    {
+      "id": "ec2",
+      "question": "What is the favorite color of unicorns?",
+      "category": "fictional",
+      "reason": "Unicorns are fictional creatures"
+    },
+    {
+      "id": "ec3",
+      "question": "What is the weather like tomorrow in New York?",
+      "category": "time_dependent",
+      "reason": "Requires real-time data"
+    },
+    {
+      "id": "ec4",
+      "question": "What is the meaning of life?",
+      "category": "philosophical",
+      "reason": "Subjective question with no factual answer"
+    },
+    {
+      "id": "ec5",
+      "question": "What is the best programming language?",
+      "category": "opinion",
+      "reason": "Subjective question based on preferences"
+    }
+  ],
+  "metadata": {
+    "created": "2024-01-01",
+    "version": "1.0",
+    "total_factual_questions": 10,
+    "total_edge_cases": 5,
+    "validation_notes": "All factual questions have verifiable, objective answers"
+  }
+} 

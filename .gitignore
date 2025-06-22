@@ -47,7 +47,6 @@ docs/_build/
 
 # Temporary files
 *.tmp
-*.log
 *.sqlite3 # SQLite databases
 
 # Miscellaneous
