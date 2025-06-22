@@ -5,6 +5,17 @@ Description: Replace 2 words with [MASK] and let AI predict them
 """
 
 from transformers import pipeline
+import json
+
+# Simple plausibility labels based on score thresholds
+def label_plausibility(score: float) -> str:
+    if score >= 0.5:
+        return "Very plausible"
+    elif score >= 0.2:
+        return "Somewhat plausible"
+    else:
+        return "Less plausible"
+
 
 def main():
     print("🤖 Simple Mask & Predict Demo")
@@ -27,9 +38,10 @@ def main():
         "The [MASK] was very [MASK] during the meeting.",
         "Python is a [MASK] programming language for [MASK] development.",
         "The weather today is [MASK] and I feel [MASK].",
-        "Machine learning [MASK] are becoming more [MASK] every year.",
-        "I like to [MASK] books and [MASK] music."
+        # "Machine learning [MASK] are becoming more [MASK] every year.",
+        # "I like to [MASK] books and [MASK] music."
     ]
+    results = []  # collect all results here
     
     # Step 4: Process each sentence
     for i, sentence in enumerate(sentences, 1):
@@ -42,96 +54,61 @@ def main():
         try:
             # Get predictions (AI fills the [MASK] tokens)
             predictions = mask_filler(sentence, top_k=3)
+            example_info = {"sentence": sentence, "predictions": []}
             
             # Step 5: Show results
             # Check if we have multiple masks or single mask
             if isinstance(predictions[0], list):
                 # Multiple masks - we get predictions for each [MASK]
                 for mask_num, mask_predictions in enumerate(predictions, 1):
+                    mask_info = {"mask_index": mask_num, "candidates": []}
                     print(f"🎯 Predictions for MASK #{mask_num}:")
                     for rank, pred in enumerate(mask_predictions, 1):
                         word = pred['token_str']
-                        confidence = pred['score'] * 100  # Convert to percentage
+                        confidence = pred['score']
+                        plaus = label_plausibility(confidence)
                         filled_sentence = pred['sequence']
                         
-                        print(f"  {rank}. '{word}' ({confidence:.1f}% confident)")
+                        print(f"  {rank}. '{word}' ({confidence*100:.1f}% confident) -> {plaus}")
                         print(f"     → {filled_sentence}")
+                        mask_info["candidates"].append({
+                            "rank": rank,
+                            "token": word,
+                            "confidence": round(confidence,4),
+                            "plausibility": plaus,
+                            "sentence": filled_sentence
+                        })
                     print()
+                    example_info["predictions"].append(mask_info)
             else:
                 # Single mask
+                mask_info = {"mask_index": 1, "candidates": []}
                 print("🎯 Predictions:")
                 for rank, pred in enumerate(predictions, 1):
-                    print('rank, pred:', rank, pred)
                     word = pred['token_str']
-                    confidence = pred['score'] * 100
+                    confidence = pred['score']
+                    plaus = label_plausibility(confidence)
                     filled_sentence = pred['sequence']
-                    
-                    print(f"  {rank}. '{word}' ({confidence:.1f}% confident)")
+                    print(f"  {rank}. '{word}' ({confidence*100:.1f}% confident) -> {plaus}")
                     print(f"     → {filled_sentence}")
-        
+                    mask_info["candidates"].append({
+                        "rank": rank,
+                        "token": word,
+                        "confidence": round(confidence,4),
+                        "plausibility": plaus,
+                        "sentence": filled_sentence
+                    })
+                example_info["predictions"].append(mask_info)
+            
+            results.append(example_info)
         except Exception as e:
             print(f"❌ Error processing sentence: {e}")
             continue
     
-    print(f"\n{'='*50}")
-    print("🎉 Demo completed!")
-    print("💡 The AI looked at the context and predicted the most likely words!")
-    print(f"{'='*50}")
-
-# Step 6: Add a simple interactive mode
-def interactive_mode():
-    """Let user try their own sentences"""
-    print(f"\n{'='*50}")
-    print("🎮 INTERACTIVE MODE")
-    print("Enter your own sentence with [MASK] tokens!")
-    print("Example: I love to [MASK] and [MASK] every day.")
-    print("Type 'quit' to exit")
-    print(f"{'='*50}")
-    
-    # Load model once
-    try:
-        mask_filler = pipeline("fill-mask", model="bert-base-uncased")
-    except Exception as e:
-        print(f"❌ Could not load model: {e}")
-        return
-    
-    while True:
-        user_input = input("\n📝 Your sentence: ").strip()
-        
-        if user_input.lower() in ['quit', 'exit', 'q']:
-            print("👋 Goodbye!")
-            break
-        
-        if '[MASK]' not in user_input:
-            print("⚠️  Please include at least one [MASK] in your sentence!")
-            continue
-        
-        try:
-            print("\n🤖 AI Predictions:")
-            predictions = mask_filler(user_input, top_k=3)
-            
-            if isinstance(predictions[0], list):
-                for mask_num, mask_preds in enumerate(predictions, 1):
-                    print(f"\n  MASK #{mask_num}:")
-                    for rank, pred in enumerate(mask_preds, 1):
-                        word = pred['token_str']
-                        confidence = pred['score'] * 100
-                        print(f"    {rank}. '{word}' ({confidence:.1f}%)")
-            else:
-                for rank, pred in enumerate(predictions, 1):
-                    word = pred['token_str']
-                    confidence = pred['score'] * 100
-                    filled = pred['sequence']
-                    print(f"  {rank}. '{word}' ({confidence:.1f}%) → {filled}")
-        
-        except Exception as e:
-            print(f"❌ Error: {e}")
+    # Save all results to JSON
+    with open("predictions.json", "w") as f:
+        json.dump(results, f, indent=2)
+    print("🎉 Demo completed! Results saved to predictions.json")
 
 if __name__ == "__main__":
-    # Run the main demo
     main()
-    
-    # Ask if user wants to try interactive mode
-    try_interactive = input("\n🎮 Want to try your own sentences? (y/n): ").lower()
-    if try_interactive in ['y', 'yes']:
-        interactive_mode()

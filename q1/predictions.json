@@ -1,47 +1,173 @@
-{
-  "original_sentence": "The cat sat on the mat because it was tired.",
-  "masked_sentence": "The cat sat [MASK] the mat because [MASK] was tired.",
-  "mask_indices": [
-    3,
-    7
-  ],
-  "model_used": "bert-base-uncased",
-  "results": [
-    {
-      "masked_position": 3,
-      "original_word": "on",
-      "candidates": [
-        {
-          "token": "on",
-          "score": 0.9904
-        },
-        {
-          "token": "at",
-          "score": 0.0014
-        },
-        {
-          "token": "upon",
-          "score": 0.0012
-        }
-      ]
-    },
-    {
-      "masked_position": 7,
-      "original_word": "it",
-      "candidates": [
-        {
-          "token": "it",
-          "score": 0.5496
-        },
-        {
-          "token": "he",
-          "score": 0.2618
-        },
-        {
-          "token": "she",
-          "score": 0.1756
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "sentence": "The [MASK] was very [MASK] during the meeting.",
+    "predictions": [
+      {
+        "mask_index": 1,
+        "candidates": [
+          {
+            "rank": 1,
+            "token": "church",
+            "confidence": 0.0361,
+            "plausibility": "Less plausible",
+            "sentence": "[CLS] the church was very [MASK] during the meeting. [SEP]"
+          },
+          {
+            "rank": 2,
+            "token": "crowd",
+            "confidence": 0.0244,
+            "plausibility": "Less plausible",
+            "sentence": "[CLS] the crowd was very [MASK] during the meeting. [SEP]"
+          },
+          {
+            "rank": 3,
+            "token": "party",
+            "confidence": 0.019,
+            "plausibility": "Less plausible",
+            "sentence": "[CLS] the party was very [MASK] during the meeting. [SEP]"
+          }
+        ]
+      },
+      {
+        "mask_index": 2,
+        "candidates": [
+          {
+            "rank": 1,
+            "token": "active",
+            "confidence": 0.1365,
+            "plausibility": "Less plausible",
+            "sentence": "[CLS] the [MASK] was very active during the meeting. [SEP]"
+          },
+          {
+            "rank": 2,
+            "token": "popular",
+            "confidence": 0.0678,
+            "plausibility": "Less plausible",
+            "sentence": "[CLS] the [MASK] was very popular during the meeting. [SEP]"
+          },
+          {
+            "rank": 3,
+            "token": "quiet",
+            "confidence": 0.0494,
+            "plausibility": "Less plausible",
+            "sentence": "[CLS] the [MASK] was very quiet during the meeting. [SEP]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "sentence": "Python is a [MASK] programming language for [MASK] development.",
+    "predictions": [
+      {
+        "mask_index": 1,
+        "candidates": [
+          {
+            "rank": 1,
+            "token": "python",
+            "confidence": 0.595,
+            "plausibility": "Very plausible",
+            "sentence": "[CLS] python is a python programming language for [MASK] development. [SEP]"
+          },
+          {
+            "rank": 2,
+            "token": "computer",
+            "confidence": 0.0461,
+            "plausibility": "Less plausible",
+            "sentence": "[CLS] python is a computer programming language for [MASK] development. [SEP]"
+          },
+          {
+            "rank": 3,
+            "token": "formal",
+            "confidence": 0.0265,
+            "plausibility": "Less plausible",
+            "sentence": "[CLS] python is a formal programming language for [MASK] development. [SEP]"
+          }
+        ]
+      },
+      {
+        "mask_index": 2,
+        "candidates": [
+          {
+            "rank": 1,
+            "token": "software",
+            "confidence": 0.6245,
+            "plausibility": "Very plausible",
+            "sentence": "[CLS] python is a [MASK] programming language for software development. [SEP]"
+          },
+          {
+            "rank": 2,
+            "token": "application",
+            "confidence": 0.0726,
+            "plausibility": "Less plausible",
+            "sentence": "[CLS] python is a [MASK] programming language for application development. [SEP]"
+          },
+          {
+            "rank": 3,
+            "token": "web",
+            "confidence": 0.0466,
+            "plausibility": "Less plausible",
+            "sentence": "[CLS] python is a [MASK] programming language for web development. [SEP]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "sentence": "The weather today is [MASK] and I feel [MASK].",
+    "predictions": [
+      {
+        "mask_index": 1,
+        "candidates": [
+          {
+            "rank": 1,
+            "token": "warm",
+            "confidence": 0.1384,
+            "plausibility": "Less plausible",
+            "sentence": "[CLS] the weather today is warm and i feel [MASK]. [SEP]"
+          },
+          {
+            "rank": 2,
+            "token": "beautiful",
+            "confidence": 0.118,
+            "plausibility": "Less plausible",
+            "sentence": "[CLS] the weather today is beautiful and i feel [MASK]. [SEP]"
+          },
+          {
+            "rank": 3,
+            "token": "cold",
+            "confidence": 0.0787,
+            "plausibility": "Less plausible",
+            "sentence": "[CLS] the weather today is cold and i feel [MASK]. [SEP]"
+          }
+        ]
+      },
+      {
+        "mask_index": 2,
+        "candidates": [
+          {
+            "rank": 1,
+            "token": "better",
+            "confidence": 0.0676,
+            "plausibility": "Less plausible",
+            "sentence": "[CLS] the weather today is [MASK] and i feel better. [SEP]"
+          },
+          {
+            "rank": 2,
+            "token": "sick",
+            "confidence": 0.0569,
+            "plausibility": "Less plausible",
+            "sentence": "[CLS] the weather today is [MASK] and i feel sick. [SEP]"
+          },
+          {
+            "rank": 3,
+            "token": "warm",
+            "confidence": 0.0414,
+            "plausibility": "Less plausible",
+            "sentence": "[CLS] the weather today is [MASK] and i feel warm. [SEP]"
+          }
+        ]
+      }
+    ]
+  }
+]
