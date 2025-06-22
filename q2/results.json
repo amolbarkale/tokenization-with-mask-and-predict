@@ -1,0 +1,532 @@
+{
+  "results": [
+    {
+      "question": "What is the capital of Japan?",
+      "question_type": "factual",
+      "timestamp": 1750615551.193828,
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "model_answer": "Tokyo.",
+          "validation": {
+            "status": "CORRECT",
+            "question_id": "q1",
+            "kb_answer": "Tokyo",
+            "model_answer": "Tokyo.",
+            "similarity": 1.0,
+            "category": "geography",
+            "retry_needed": false
+          }
+        }
+      ],
+      "kb_info": {
+        "id": "q1",
+        "question": "What is the capital of Japan?",
+        "answer": "Tokyo",
+        "category": "geography",
+        "difficulty": "easy"
+      }
+    },
+    {
+      "question": "What is the chemical formula for water?",
+      "question_type": "factual",
+      "timestamp": 1750615553.322438,
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "model_answer": "The chemical formula for water is : O 1",
+          "validation": {
+            "status": "HALLUCINATION",
+            "question_id": "q2",
+            "kb_answer": "H2O",
+            "model_answer": "The chemical formula for water is : O 1",
+            "similarity": 0.1,
+            "category": "chemistry",
+            "retry_needed": true,
+            "reason": "Answer differs from knowledge base"
+          }
+        },
+        {
+          "attempt_number": 2,
+          "model_answer": "Water.",
+          "validation": {
+            "status": "HALLUCINATION",
+            "question_id": "q2",
+            "kb_answer": "H2O",
+            "model_answer": "Water.",
+            "similarity": 0.0,
+            "category": "chemistry",
+            "retry_needed": true,
+            "reason": "Answer differs from knowledge base"
+          }
+        }
+      ],
+      "kb_info": {
+        "id": "q2",
+        "question": "What is the chemical formula for water?",
+        "answer": "H2O",
+        "category": "chemistry",
+        "difficulty": "easy"
+      }
+    },
+    {
+      "question": "Who was the first President of the United States?",
+      "question_type": "factual",
+      "timestamp": 1750615558.844466,
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "model_answer": "George Washington.",
+          "validation": {
+            "status": "CORRECT",
+            "question_id": "q3",
+            "kb_answer": "George Washington",
+            "model_answer": "George Washington.",
+            "similarity": 1.0,
+            "category": "history",
+            "retry_needed": false
+          }
+        }
+      ],
+      "kb_info": {
+        "id": "q3",
+        "question": "Who was the first President of the United States?",
+        "answer": "George Washington",
+        "category": "history",
+        "difficulty": "easy"
+      }
+    },
+    {
+      "question": "What is the largest mammal in the world?",
+      "question_type": "factual",
+      "timestamp": 1750615560.610211,
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "model_answer": "whales.",
+          "validation": {
+            "status": "HALLUCINATION",
+            "question_id": "q4",
+            "kb_answer": "Blue whale",
+            "model_answer": "whales.",
+            "similarity": 0.625,
+            "category": "biology",
+            "retry_needed": true,
+            "reason": "Answer differs from knowledge base"
+          }
+        },
+        {
+          "attempt_number": 2,
+          "model_answer": "Kookaburras",
+          "validation": {
+            "status": "HALLUCINATION",
+            "question_id": "q4",
+            "kb_answer": "Blue whale",
+            "model_answer": "Kookaburras",
+            "similarity": 0.09523809523809523,
+            "category": "biology",
+            "retry_needed": true,
+            "reason": "Answer differs from knowledge base"
+          }
+        }
+      ],
+      "kb_info": {
+        "id": "q4",
+        "question": "What is the largest mammal in the world?",
+        "answer": "Blue whale",
+        "category": "biology",
+        "difficulty": "easy"
+      }
+    },
+    {
+      "question": "What is the square root of 144?",
+      "question_type": "factual",
+      "timestamp": 1750615564.6458583,
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "model_answer": "I'm not sure.",
+          "validation": {
+            "status": "HALLUCINATION",
+            "question_id": "q5",
+            "kb_answer": "12",
+            "model_answer": "I'm not sure.",
+            "similarity": 0.0,
+            "category": "mathematics",
+            "retry_needed": true,
+            "reason": "Answer differs from knowledge base"
+          }
+        },
+        {
+          "attempt_number": 2,
+          "model_answer": "I'm a mathematician and I don't know.",
+          "validation": {
+            "status": "HALLUCINATION",
+            "question_id": "q5",
+            "kb_answer": "12",
+            "model_answer": "I'm a mathematician and I don't know.",
+            "similarity": 0.0,
+            "category": "mathematics",
+            "retry_needed": true,
+            "reason": "Answer differs from knowledge base"
+          }
+        }
+      ],
+      "kb_info": {
+        "id": "q5",
+        "question": "What is the square root of 144?",
+        "answer": "12",
+        "category": "mathematics",
+        "difficulty": "easy"
+      }
+    },
+    {
+      "question": "What is the currency of Germany?",
+      "question_type": "factual",
+      "timestamp": 1750615570.5360453,
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "model_answer": "A lot.",
+          "validation": {
+            "status": "HALLUCINATION",
+            "question_id": "q6",
+            "kb_answer": "Euro",
+            "model_answer": "A lot.",
+            "similarity": 0.2222222222222222,
+            "category": "economics",
+            "retry_needed": true,
+            "reason": "Answer differs from knowledge base"
+          }
+        },
+        {
+          "attempt_number": 2,
+          "model_answer": "It's not USD.",
+          "validation": {
+            "status": "HALLUCINATION",
+            "question_id": "q6",
+            "kb_answer": "Euro",
+            "model_answer": "It's not USD.",
+            "similarity": 0.125,
+            "category": "economics",
+            "retry_needed": true,
+            "reason": "Answer differs from knowledge base"
+          }
+        }
+      ],
+      "kb_info": {
+        "id": "q6",
+        "question": "What is the currency of Germany?",
+        "answer": "Euro",
+        "category": "economics",
+        "difficulty": "easy"
+      }
+    },
+    {
+      "question": "What is the boiling point of water at sea level?",
+      "question_type": "factual",
+      "timestamp": 1750615574.342134,
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "model_answer": "It's the same as boiling point of water in a water balloon.",
+          "validation": {
+            "status": "HALLUCINATION",
+            "question_id": "q7",
+            "kb_answer": "100 degrees Celsius",
+            "model_answer": "It's the same as boiling point of water in a water balloon.",
+            "similarity": 0.15584415584415584,
+            "category": "physics",
+            "retry_needed": true,
+            "reason": "Answer differs from knowledge base"
+          }
+        },
+        {
+          "attempt_number": 2,
+          "model_answer": "I don't have a source on me but I'm guessing somewhere between",
+          "validation": {
+            "status": "HALLUCINATION",
+            "question_id": "q7",
+            "kb_answer": "100 degrees Celsius",
+            "model_answer": "I don't have a source on me but I'm guessing somewhere between",
+            "similarity": 0.19753086419753085,
+            "category": "physics",
+            "retry_needed": true,
+            "reason": "Answer differs from knowledge base"
+          }
+        }
+      ],
+      "kb_info": {
+        "id": "q7",
+        "question": "What is the boiling point of water at sea level?",
+        "answer": "100 degrees Celsius",
+        "category": "physics",
+        "difficulty": "easy"
+      }
+    },
+    {
+      "question": "Who wrote 'Pride and Prejudice'?",
+      "question_type": "factual",
+      "timestamp": 1750615581.9851317,
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "model_answer": "'",
+          "validation": {
+            "status": "HALLUCINATION",
+            "question_id": "q8",
+            "kb_answer": "Jane Austen",
+            "model_answer": "'",
+            "similarity": 0.0,
+            "category": "literature",
+            "retry_needed": true,
+            "reason": "Answer differs from knowledge base"
+          }
+        },
+        {
+          "attempt_number": 2,
+          "model_answer": "I'm not sure.",
+          "validation": {
+            "status": "HALLUCINATION",
+            "question_id": "q8",
+            "kb_answer": "Jane Austen",
+            "model_answer": "I'm not sure.",
+            "similarity": 0.17391304347826086,
+            "category": "literature",
+            "retry_needed": true,
+            "reason": "Answer differs from knowledge base"
+          }
+        }
+      ],
+      "kb_info": {
+        "id": "q8",
+        "question": "Who wrote 'Pride and Prejudice'?",
+        "answer": "Jane Austen",
+        "category": "literature",
+        "difficulty": "easy"
+      }
+    },
+    {
+      "question": "What is the atomic number of oxygen?",
+      "question_type": "factual",
+      "timestamp": 1750615585.4439619,
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "model_answer": "The word oxygen is in my sentence.",
+          "validation": {
+            "status": "HALLUCINATION",
+            "question_id": "q9",
+            "kb_answer": "8",
+            "model_answer": "The word oxygen is in my sentence.",
+            "similarity": 0.0,
+            "category": "chemistry",
+            "retry_needed": true,
+            "reason": "Answer differs from knowledge base"
+          }
+        },
+        {
+          "attempt_number": 2,
+          "model_answer": "12.",
+          "validation": {
+            "status": "HALLUCINATION",
+            "question_id": "q9",
+            "kb_answer": "8",
+            "model_answer": "12.",
+            "similarity": 0.0,
+            "category": "chemistry",
+            "retry_needed": true,
+            "reason": "Answer differs from knowledge base"
+          }
+        }
+      ],
+      "kb_info": {
+        "id": "q9",
+        "question": "What is the atomic number of oxygen?",
+        "answer": "8",
+        "category": "chemistry",
+        "difficulty": "easy"
+      }
+    },
+    {
+      "question": "What year did the Titanic sink?",
+      "question_type": "factual",
+      "timestamp": 1750615589.7561893,
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "model_answer": "19 years later.",
+          "validation": {
+            "status": "HALLUCINATION",
+            "question_id": "q10",
+            "kb_answer": "1912",
+            "model_answer": "19 years later.",
+            "similarity": 0.2222222222222222,
+            "category": "history",
+            "retry_needed": true,
+            "reason": "Answer differs from knowledge base"
+          }
+        },
+        {
+          "attempt_number": 2,
+          "model_answer": "Titanic",
+          "validation": {
+            "status": "HALLUCINATION",
+            "question_id": "q10",
+            "kb_answer": "1912",
+            "model_answer": "Titanic",
+            "similarity": 0.0,
+            "category": "history",
+            "retry_needed": true,
+            "reason": "Answer differs from knowledge base"
+          }
+        }
+      ],
+      "kb_info": {
+        "id": "q10",
+        "question": "What year did the Titanic sink?",
+        "answer": "1912",
+        "category": "history",
+        "difficulty": "medium"
+      }
+    },
+    {
+      "question": "What is the current population of Mars?",
+      "question_type": "edge_case",
+      "timestamp": 1750615592.9425933,
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "model_answer": "The sun is not even close to being the sun.",
+          "validation": {
+            "status": "EDGE_CASE",
+            "edge_case_id": "ec1",
+            "category": "out_of_domain",
+            "reason": "No human population on Mars",
+            "model_answer": "The sun is not even close to being the sun.",
+            "retry_needed": false
+          }
+        }
+      ],
+      "edge_case_info": {
+        "id": "ec1",
+        "question": "What is the current population of Mars?",
+        "category": "out_of_domain",
+        "reason": "No human population on Mars"
+      }
+    },
+    {
+      "question": "What is the favorite color of unicorns?",
+      "question_type": "edge_case",
+      "timestamp": 1750615596.416463,
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "model_answer": "Green.",
+          "validation": {
+            "status": "EDGE_CASE",
+            "edge_case_id": "ec2",
+            "category": "fictional",
+            "reason": "Unicorns are fictional creatures",
+            "model_answer": "Green.",
+            "retry_needed": false
+          }
+        }
+      ],
+      "edge_case_info": {
+        "id": "ec2",
+        "question": "What is the favorite color of unicorns?",
+        "category": "fictional",
+        "reason": "Unicorns are fictional creatures"
+      }
+    },
+    {
+      "question": "What is the weather like tomorrow in New York?",
+      "question_type": "edge_case",
+      "timestamp": 1750615597.8227432,
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "model_answer": "it's raining",
+          "validation": {
+            "status": "EDGE_CASE",
+            "edge_case_id": "ec3",
+            "category": "time_dependent",
+            "reason": "Requires real-time data",
+            "model_answer": "it's raining",
+            "retry_needed": false
+          }
+        }
+      ],
+      "edge_case_info": {
+        "id": "ec3",
+        "question": "What is the weather like tomorrow in New York?",
+        "category": "time_dependent",
+        "reason": "Requires real-time data"
+      }
+    },
+    {
+      "question": "What is the meaning of life?",
+      "question_type": "edge_case",
+      "timestamp": 1750615599.7371259,
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "model_answer": "Life is the universe. Everything else is just a collection of potentials. Matter",
+          "validation": {
+            "status": "EDGE_CASE",
+            "edge_case_id": "ec4",
+            "category": "philosophical",
+            "reason": "Subjective question with no factual answer",
+            "model_answer": "Life is the universe. Everything else is just a collection of potentials. Matter",
+            "retry_needed": false
+          }
+        }
+      ],
+      "edge_case_info": {
+        "id": "ec4",
+        "question": "What is the meaning of life?",
+        "category": "philosophical",
+        "reason": "Subjective question with no factual answer"
+      }
+    },
+    {
+      "question": "What is the best programming language?",
+      "question_type": "edge_case",
+      "timestamp": 1750615604.226513,
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "model_answer": "Haskell.",
+          "validation": {
+            "status": "EDGE_CASE",
+            "edge_case_id": "ec5",
+            "category": "opinion",
+            "reason": "Subjective question based on preferences",
+            "model_answer": "Haskell.",
+            "retry_needed": false
+          }
+        }
+      ],
+      "edge_case_info": {
+        "id": "ec5",
+        "question": "What is the best programming language?",
+        "category": "opinion",
+        "reason": "Subjective question based on preferences"
+      }
+    }
+  ],
+  "summary": {
+    "total_questions": 15,
+    "correct_answers": 2,
+    "hallucinations_detected": 8,
+    "edge_cases": 5,
+    "out_of_domain": 0,
+    "accuracy": 13.333333333333334,
+    "hallucination_rate": 53.333333333333336,
+    "total_attempts": 23,
+    "retries_needed": 8,
+    "retry_rate": 53.333333333333336
+  },
+  "timestamp": 1750615605.6655614
+}
