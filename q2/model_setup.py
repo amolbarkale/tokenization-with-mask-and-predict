@@ -35,7 +35,7 @@ class LocalModelHandler:
                 model=self.model,
                 tokenizer=self.tokenizer,
                 max_length=100,
-                temperature=0.7
+                temperature=0.1
             )
             
             print("✅ Model loaded successfully!")
